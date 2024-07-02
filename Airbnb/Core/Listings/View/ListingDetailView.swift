@@ -152,6 +152,7 @@ struct ListingDetailView: View {
             }
             .padding()
         }
+        .toolbar(.hidden, for: .tabBar)
         .padding(.bottom, 64)
         .overlay(alignment: .bottom, content: {
             VStack {
