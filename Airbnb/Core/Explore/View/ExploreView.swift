@@ -9,32 +9,43 @@ import SwiftUI
 
 struct ExploreView: View {
     @State private var showDestinationSearchView = false
+    @StateObject var viewModel = ExplorerViewModel(service: ExploreService())
+//    @State private var searchText =
     var body: some View {
         NavigationStack {
             if showDestinationSearchView {
-                DestinationSearchView(show: $showDestinationSearchView)
+                DestinationSearchView(show: $showDestinationSearchView, viewModel: viewModel)
+                    .toolbar(.hidden, for: .tabBar)
             } else {
                 ScrollView {
-                    SearchAndFilterBar()
+                    SearchAndFilterBar(location: $viewModel.searchLocation)
                         .onTapGesture {
                             withAnimation(.snappy) {
                                 showDestinationSearchView.toggle()
                             }
                         }
-                    LazyVStack(spacing: 32) {
-                        ForEach(0 ... 10, id: \.self) { listing in
-                            NavigationLink(value: listing) {
-                                ListingItemView()
-                                    .frame(height: 400)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                            }
-                            
-                        }
+                    if viewModel.listings.isEmpty {
+                        ProgressView(label: {
+                            Text("Loading...!")
+                        })
+                        .progressViewStyle(.circular)
                     }
-                    .padding()
+                    else{
+                        LazyVStack(spacing: 32) {
+                            ForEach(viewModel.listings) { listing in
+                                NavigationLink(value: listing) {
+                                    ListingItemView( listing: listing)
+                                        .frame(height: 430)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                                
+                            }
+                        }
+                        .padding()
+                    }
                 }
-                .navigationDestination(for: Int.self) { listing in
-                    ListingDetailView()
+                .navigationDestination(for: Listing.self) { listing in
+                    ListingDetailView(listing: listing)
                 }
             }
         }

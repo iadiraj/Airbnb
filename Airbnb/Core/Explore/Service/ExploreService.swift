@@ -6,8 +6,12 @@
 //
 
 import Foundation
+
 class ExploreService {
-    func fetchListings() async throws -> [Listing] {
+    
+    func fetchListing() async throws -> [Listing] {
         return DeveloperPreview.shared.listing
+        
     }
+    
 }

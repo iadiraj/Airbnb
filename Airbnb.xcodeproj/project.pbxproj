@@ -27,6 +27,7 @@
 		059890692C2EB5A6005C3494 /* ListingImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059890682C2EB5A6005C3494 /* ListingImageCarouselView.swift */; };
 		05C8E9AE2C31414B0011DD9E /* DestinationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8E9AD2C31414B0011DD9E /* DestinationSearchView.swift */; };
 		05C8E9B02C3145490011DD9E /* CollapsedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8E9AF2C3145490011DD9E /* CollapsedPickerView.swift */; };
+		05EFE0782C3B0EB9006A3755 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFE0772C3B0EB9006A3755 /* Regions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		059890682C2EB5A6005C3494 /* ListingImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageCarouselView.swift; sourceTree = "<group>"; };
 		05C8E9AD2C31414B0011DD9E /* DestinationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchView.swift; sourceTree = "<group>"; };
 		05C8E9AF2C3145490011DD9E /* CollapsedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedPickerView.swift; sourceTree = "<group>"; };
+		05EFE0772C3B0EB9006A3755 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				050B90042C33F0750046C81C /* DeveloperPreview.swift */,
+				05EFE0772C3B0EB9006A3755 /* Regions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				059890642C2EB1C8005C3494 /* SearchAndFilterBar.swift in Sources */,
 				059890662C2EB53E005C3494 /* ListingDetailView.swift in Sources */,
 				054FFD7C2C2E9EBA00633196 /* AirbnbApp.swift in Sources */,
+				05EFE0782C3B0EB9006A3755 /* Regions.swift in Sources */,
 				050B900A2C33F11D0046C81C /* ExplorerViewModel.swift in Sources */,
 				050B8FFF2C33EAE40046C81C /* MainTabView.swift in Sources */,
 			);
